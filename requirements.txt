@@ -1,0 +1,6 @@
+sqlite
+Flask
+Flask-Session
+requests
+functools
+yfinance

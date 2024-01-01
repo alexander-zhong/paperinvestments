@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Log In
+{% endblock %}
+
+{% block main %}
+
+
+
+
+
+
+<div class="account-forms">
+    <img id="formimage" src="static/logo.png">
+    <h2 id="standardcolor">Login</h4>
+        {% if not username %}
+        <div class="alert alert-danger" role="alert">
+            You must enter a username!
+        </div>
+        {% elif not password %}
+        <div class="alert alert-danger" role="alert">
+            You must enter a password!
+        </div>
+        {% elif invalid %}
+        <div class="alert alert-danger" role="alert">
+            Your username either does not exist or password is invalid!
+        </div>
+        {% endif %}
+        <form action="/login" method="post">
+            <div class="form-group">
+                <input name="username" type="username" class="form-control" 
+                    placeholder="Username" autocomplete="off" autofocus>
+            </div>
+            <div class="form-group">
+                <input name="password" type="password" class="form-control" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-secondary btn-sm">Login</button>
+        </form>
+</div>
+
+{% endblock %}

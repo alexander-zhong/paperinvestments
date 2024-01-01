@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Trade
+{% endblock %}
+
+{% block main %}
+
+
+
+
+
+<div class="trade-forms">
+  <img id="formimage" src="static/logo.png">
+  <h2 id="standardcolor">Make a Transaction</h4>
+    <form action="/trade" method="post">
+      <div class="form-group">
+        {% if error is not none %}
+        <div class="alert alert-danger" role="alert">
+          {{ error }}
+        </div>
+        {% elif success is not none %}
+        <div class="alert alert-success" role="alert">
+          {{ success }}
+        </div>
+        {% endif %}
+        <input name="ticker" type="text" class="form-control" placeholder="Ticker Symbol" autocomplete="off" autofocus>
+        <div class="input-group">
+          <input name="number_of_shares"type="number" class="form-control" placeholder="Number of Shares" aria-label="Number of Shares with buy and sell">
+          <button class="btn btn-outline-secondary" type="submit" name="submit_button" value="buy"><span style="color: lightgreen;">Buy</span></button>
+          <button class="btn btn-outline-secondary" type="submit" name="submit_button" value="sell"><span style="color: lightcoral;">Sell</span></button>
+        </div>
+      </div>
+    </form>
+</div>
+
+{% endblock %}

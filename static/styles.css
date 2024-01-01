@@ -1,0 +1,135 @@
+
+.account-forms {
+    color: #EDEDED;
+    width: 20%; 
+    margin: auto; 
+    padding: 1%;
+    border-radius: 10px;
+    background-color: #1D4356;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+
+#footertext {
+    color: #EDEDED;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#standardcolor {
+    color: #EDEDED;
+}
+
+
+#formimage {
+    width: 50%;
+}
+
+#footerlinks {
+    color: #EDEDED;
+    text-decoration: underline;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#quotebox {
+    margin-top: 10%;
+    background-color: #1D4356;
+    color: #EDEDED;
+    width: 80%; 
+    margin: auto; 
+    padding: 1%;
+    border-radius: 10px;
+    background-color: #1D4356;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    font-size: 90%;
+
+}
+
+
+.quote-forms {
+    color: #EDEDED;
+    width: 20%; 
+    margin: auto; 
+    padding: 1%;
+    border-radius: 10px;
+    background-color: #1D4356;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2.5%;
+}
+
+td, th {
+    color: #EDEDED;
+}
+
+
+#mainnav {
+    background-color: #1D4356;
+    color: #EDEDED;
+}
+
+
+#dropdownnav:hover {
+    background-color: #1D4356 !important;
+}
+
+.dropdowntextunderline:hover {
+    text-decoration: underline;
+}
+
+#dropdownnav{
+    background-color: #1D4356 !important;
+    color: #EDEDED;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-image: url("background.png"); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+}
+
+html {
+    height: 100%;
+}
+
+#mainimage {
+    width: 3%;
+}
+
+
+.trade-forms {
+    color: #EDEDED;
+    width: 20%; 
+    margin: auto; 
+    padding: 1%;
+    border-radius: 10px;
+    background-color: #1D4356;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2.5%;
+}
+
+#buy-buttons {
+    border-color: #1D4356;
+}
+
+#title-box {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    background-color: #1D4356;
+    color: #EDEDED;
+    width: 20%; 
+    padding: 1%;
+    border-radius: 10px;
+    background-color: #1D4356;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    font-size: 300%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#title-table-emphasis {
+    background-color: #132B37;
+}

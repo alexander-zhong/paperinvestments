@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Quote
+{% endblock %}
+
+{% block main %}
+
+
+
+
+
+
+<div class="quote-forms">
+    <img id="formimage" src="static/logo.png">
+    <h2 id="standardcolor">Quote</h4>
+        <form action="/quote" method="post">
+            <div class="form-group">
+                {% if not chosen %}
+                <div class="alert alert-danger" role="alert">
+                    Ticker symbol not found or field is empty! Please enter a correct symbol (example AAPL)!
+                </div>
+                {% endif %}
+                <input name="ticker" type="text"class="form-control" 
+                    placeholder="Ticker Symbol" autocomplete="off" autofocus>
+            </div>
+            <button type="submit" class="btn btn-secondary btn-sm">Quote</button>
+        </form>
+</div>
+
+{% if found %}
+
+<div id="quotebox">
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Ticker</th>
+        <th scope="col">Sector</th>
+        <th scope="col">Currency</th>
+        <th scope="col">Year Founded</th>
+        <th scope="col">Website</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ info.longName | default("N/A") | safe }}</td>
+        <td>{{ info.symbol | default("N/A") | safe }}</td>
+        <td>{{ info.sector | default("N/A") | safe }}</td>
+        <td>{{ info.currency | default("N/A") | safe }}</td>
+        <td>{{ info.yearBorn | default("N/A") | safe }}</td>
+        <td>{{ info.website | default("N/A") | safe }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Price</th>
+        <th scope="col">Day High</th>
+        <th scope="col">Day Low</th>
+        <th scope="col">Open</th>
+        <th scope="col">Market Cap</th>
+        <th scope="col">Debt to Equity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ info.currentPrice | default("N/A") | safe }}</td>
+        <td><span style="color: lightgreen;">{{ info.dayHigh | default("N/A") | safe }}</span></td>
+        <td><span style="color: lightcoral;">{{ info.dayLow | default("N/A") | safe }}</span></td>
+        <td>{{ info.open | default("N/A") | safe }}</td>
+        <td>{{ info.marketCap | default("N/A") | safe }}</td>
+        <td>{{ info.debtToEquity | default("N/A") | safe }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  
+  
+  <figure class="text-center">
+    <blockquote class="blockquote">
+      <p>Description:</p>
+    </blockquote>
+    <figcaption >
+        {{ info.longBusinessSummary | default("N/A") | safe }}
+    </figcaption>
+  </figure>
+</div>
+
+{% endif %}
+
+
+
+{% endblock %}

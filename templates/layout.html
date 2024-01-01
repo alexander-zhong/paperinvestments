@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+
+    <!-- http://getbootstrap.com/docs/5.1/ -->
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" rel="stylesheet">
+    <script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link href="/static/logo.png" rel="icon">
+
+    <link href="/static/styles.css" rel="stylesheet">
+
+    <title>PaperInvestments: {% block title %}{% endblock %}</title>
+
+</head>
+
+<body>
+    <div id="mainnav">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <img id="mainimage" src="static/logo.png">
+            <a style="font-size: larger;" href="/"><span id="mainnav">PaperInvestments</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                {% if session["user_id"] %}
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home"><span id="mainnav">Home</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/history"><span id="mainnav">History</span></a>
+                    </li>
+                    <li class="nav-item dropdown" id="dropdownnav">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownnav" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <span id="dropdownnav">Actions</span>
+                        </a>
+                        <ul id="dropdownnav" class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                            <li id="dropdownnav" class="dropdowntextunderline"><a class="dropdown-item" id="dropdownnav"
+                                    href="/quote"><span id="mainnav">Quote</span></a></li>
+                            <li id="dropdownnav" class="dropdowntextunderline"><a class="dropdown-item" id="dropdownnav"
+                                    href="/trade"><span id="mainnav">Trade</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <span class="navbar-text"><span id="mainnav">Hello, {{ username }}</span></span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout"><span id="mainnav">Logout</span></a>
+                    </li>
+                </ul>
+                {% else %}
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/"><span id="mainnav">Home</span></a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login"><span id="mainnav">Login</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register"><span id="mainnav">Register</span></a>
+                    </li>
+                </ul>
+                {% endif %}
+            </div>
+        </nav>
+    </div>
+
+    <main class="text-center container-fluid py-5 ">
+        {% block main %}{% endblock %}
+    </main>
+    <footer class="small text-center mb-8 ">
+        <span id="footertext">Data provided by <a id="footerlinks" href="https://ca.finance.yahoo.com/">Yahoo
+                Finance</a></span>
+        <br>
+        <span id="footertext">Background Photo by <a id="footerlinks"
+                href="https://unsplash.com/@yuta129?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Yuta
+                Koike</a> on <a id="footerlinks"
+                href="https://unsplash.com/photos/a-city-with-snow-hYu4vUVN1YA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></span>
+    </footer>
+</body>
+
+</html>

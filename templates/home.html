@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+
+{% block main %}
+
+<h1 id="title-box">Portfolio</h1>
+
+<div id="quotebox">
+    <table class="table">
+        <thead>
+            <tr id="title-table-emphasis">
+                <th scope="col">Type</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col">Number of Shares</th>
+                <th scope="col">$ Per Share</th>
+                <th scope="col">Total $</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in stock_data %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td></td>
+                <td></td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <th scope="col">Cash</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col">{{ cash }}</th>
+            </tr>
+
+            <tr id="title-table-emphasis">
+                <th scope="col">Total</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col">{{ total_liquidity }}</th>
+            </tr>
+        </tbody>
+
+
+    </table>
+
+    {% endblock %}
